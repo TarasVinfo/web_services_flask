@@ -1,0 +1,6 @@
+curl http://localhost:5000/posts -v
+curl -X POST http://localhost:5000/posts -v
+curl -X GET http://localhost:5000/posts/1 -v
+curl -X PUT http://localhost:5000/posts/1 -v
+curl -X DELETE http://localhost:5000/posts/1 -v
+curl -X POST http://localhost:5000/posts -v -H "Content-type: application/json" -d '{"title": "Title1", "body": "qwert12345", "date": "2020-04-01T00:00"}'
