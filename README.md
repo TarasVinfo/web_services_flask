@@ -2,14 +2,14 @@
 
 Source from - https://github.com/denyszamiatin/blog_rest
 
-##Technology stack.
+Technology stack.
 
 - Flask
 - Flask-Migrate
 - Flask-RESTful
 - Flask-SQLAlchemy
 
-##Install.
+Install.
 
 1) flask db init - command initialize migration repository runs at once.
 2) flask db migrate - command for creating migrations.
