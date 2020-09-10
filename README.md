@@ -1,6 +1,6 @@
 # Study Project.
 
-Source from - https://github.com/denyszamiatin/blog_rest
+Source from - https://github.com/denyszamiatin/blog_1
 
 Technology stack.
 
