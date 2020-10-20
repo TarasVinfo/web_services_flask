@@ -1,6 +1,6 @@
-from . import db
 from werkzeug.security import generate_password_hash
 import uuid
+from . import db
 
 
 class User(db.Model):

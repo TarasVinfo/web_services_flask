@@ -16,15 +16,15 @@ def login():
     username = auth.get('username', '')
     user = db.session.query(models.User).filter_by(login=username).first()
     check_password = check_password_hash(
-        user.password, auth.get("password", ""))
+        user.password, auth.get('password', ''))
 
     if user is None or not check_password:
         return '', 404, message
 
-    token = jwt.encode({
-        "user_id": user.uuid,
-        "exp": datetime.datetime.now() + datetime.timedelta(hours=1)
-    }, app.config['SECRET_KEY'])
+    token_data = {"user_id": user.uuid,
+                  "exp": datetime.datetime.now() + datetime.timedelta(hours=1)}
+
+    token = jwt.encode(token_data, app.config['SECRET_KEY'])
 
     return jsonify({'token': token.decode('utf-8')})
 
@@ -38,7 +38,7 @@ def token_required(func):
             return '', 401, message
 
         try:
-            uuid = jwt.decode(token, app.config['SECRET_KEY'])['user_id']
+            uuid = jwt.decode(token, app.config['SECRET_KEY']).get('user_id')
 
         except (KeyError, jwt.ExpiredSignatureError):
             return '', 401, message
