@@ -9,6 +9,14 @@ Source from - https://github.com/denyszamiatin/blog_1
     - Flask-SQLAlchemy
 
 ### Start project.
+Install dependencies.
+```bash
+poetry install
+```
+Activate virtual environment.
+```bash
+poetry shell
+```
 Initialize migration repository, runs at once.
 ```bash
 flask db init
@@ -24,6 +32,10 @@ flask db upgrade
 Run application.
 ```bash
 flask run
+```
+### Run tests.
+```bash
+python -m pytest
 ```
 
 ### curl commands.
